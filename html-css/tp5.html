@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML forms</title>
+  </head>
+  <body>
+    <form>
+      <!-- action: c'est la où les données seront sauvegardées -->
+      <p>
+        <label for="fname">Nom: </label>
+        <input type="text" id="fname" placeholder="Ex: Djiby" required />
+      </p>
+      <p>
+        <label for="lname">Prénom: </label>
+        <input type="text" id="lname" placeholder="Ex: BALDE" required />
+      </p>
+      <p>
+        <label for="lieu">Lieu de naissance: </label>
+        <input type="text" id="lieu" placeholder="Ex: Saint Denis" required />
+      </p>
+      <p>
+        <label for="pays">Pays d’origine: </label>
+        <input type="text" id="pays" placeholder="Ex: France" required />
+      </p>
+      <p>
+        <span>Civilité: </span><br />
+        <input type="radio" id="mr" name="civil" value="mr" />
+        <label for="mr">Monsieur</label><br />
+        <input type="radio" id="mme" name="civil" value="mme" />
+        <label for="mme">Madame</label>
+      </p>
+      <p>
+        <label for="bac">Pourcentage(%) ou moyenne obtenu en BAC: </label>
+        <input type="number" id="bac" name="bac" min="1" max="100" required />
+      </p>
+      <p>
+        <span>Choix de formations: </span> <br />
+        <input type="checkbox" id="devsf" />
+        <label for="devsf">Développement Salesforce</label>
+        <br />
+        <input type="checkbox" id="devjs" />
+        <label for="devjs">Développement Javascript</label>
+        <br />
+        <input type="checkbox" id="devjp" />
+        <label for="devjp">Développement Java & Python</label>
+        <br />
+      </p>
+      <p>
+        <label for="fdata">Autres choix de formations: </label><br />
+        <select name="fdata" id="fdata" multiple>
+          <!-- valeur: données à envoyer lors de la soumission du formulaire -->
+          <option value="FDS">Data Science</option>
+          <option value="FDA">Data Analyse</option>
+          <option value="DAS">Analyse Statistiques</option>
+        </select>
+      </p>
+      <p>
+        <label for="email">Adresse email: </label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Ex: example@example.fr"
+          required
+        />
+      </p>
+      <p>
+        <label for="tel">Numéro de téléphone: </label>
+        <input
+          type="tel"
+          id="tel"
+          name="tel"
+          placeholder="07XXXXXXXX"
+          maxlength="10"
+          required
+        />
+      </p>
+      <p>
+        <span>Lettre de motivation: </span><br />
+        <label for="letter-file">- choisir un fichier: </label>
+        <input type="file" id="letter-file" /><br />
+        <label for="letter-text">- ou remplir directement la lettre ici</label
+        ><br />
+        <textarea
+          name="letter"
+          id="letter-text"
+          cols="70"
+          rows="5"
+          maxlength="300"
+        ></textarea>
+      </p>
+      <button type="submit">submit</button>
+    </form>
+  </body>
+</html>
