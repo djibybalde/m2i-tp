@@ -1,4 +1,10 @@
-# Here are some examples of this responsive page, using GRID CSS
+# CSS GRID and Responsive page
+
+---
+
+### For the demo, please visit this [link](https://tp10-css-grid.netlify.app) : https://tp10-css-grid.netlify.app
+
+Here are some examples of this responsive page,
 
 ---
 
