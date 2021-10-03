@@ -1,0 +1,13 @@
+h1 {
+  font-size: 20px;
+}
+span {
+  margin: 10px;
+}
+.matrix {
+  border-left: 2px solid slategray;
+  border-right: 2px solid slategray;
+}
+.x {
+  margin: 7px;
+}
