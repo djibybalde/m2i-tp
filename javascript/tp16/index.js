@@ -6,23 +6,23 @@ const len = parseInt(
   )
 );
 
-let sum = 0;
+let sumDiagonal = 0;
 document.write(`
   <p>Matrice carrée de taille ${len}</p>
   <div>
 `);
-for (let j = 0; j < len; j++) {
+for (let i = 0; i < len; i++) {
   let row = [];
   document.write(`<span class="matrix">`);
-  for (let i = 0; i < len; i++) {
-    let x = parseInt(
-      prompt(`Entrez l'élément ${i + 1} de la ligne ${j + 1}: `)
+  for (let j = 0; j < len; j++) {
+    let ij = parseInt(
+      prompt(`Entrez l'élément ${j + 1} de la ligne ${i + 1}: `)
     );
-    row.push(x);
+    row.push(ij);
     if (i === j) {
-      sum += x;
+      sumDiagonal += ij;
     }
-    document.write(`<span class="x">${x}</span>`);
+    document.write(`<span class="x">${ij}</span>`);
   }
   matrix.push(row);
   document.write("</span><br />");
@@ -37,7 +37,7 @@ for (let j = 0; j < len; j++) {
 // }
 document.write(`
   </div>
-  <p>Somme des éléments de la diagonale donne <strong>${sum}</strong></p>
+  <p>Somme des éléments de la diagonale donne <strong>${sumDiagonal}</strong></p>
 `);
 console.log(matrix);
-console.log(sum);
+console.log(sumDiagonal);

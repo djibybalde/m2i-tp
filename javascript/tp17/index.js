@@ -10,12 +10,12 @@ document.write(`
   <p>Matrice carrée de taille ${len}</p>
   <div>
 `);
-for (let j = 0; j < len; j++) {
+for (let i = 0; i < len; i++) {
   let row = [];
   document.write(`<span class="matrix">`);
-  for (let i = 0; i < len; i++) {
+  for (let j = 0; j < len; j++) {
     let ij = parseInt(
-      prompt(`Entrez l'élément ${i + 1} de la ligne ${j + 1}: `)
+      prompt(`Entrez l'élément ${j + 1} de la ligne ${i + 1}: `)
     );
     row.push(ij);
     document.write(`<span class="x">${ij}</span>`);
@@ -26,8 +26,9 @@ for (let j = 0; j < len; j++) {
 
 let diag1 = 0;
 let diag2 = 0;
-for (let j = 0; j < len; j++) {
-  for (let i = 0; i < len; i++) {
+//O(n^2)
+for (let i = 0; i < len; i++) {
+  for (let j = 0; j < len; j++) {
     //element from the main diagonal
     if (i === j) {
       diag1 += matrix[i][j];
