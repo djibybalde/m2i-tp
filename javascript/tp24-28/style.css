@@ -1,0 +1,27 @@
+.text-red {
+  color: red;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+#cours-form {
+  position: absolute;
+  margin-top: 130px;
+  margin-left: 200px;
+}
+
+input {
+  margin: 3px;
+}
+
+thead {
+  background-color: slategray;
+}
+tbody tr:nth-child(odd) {
+  background-color: #dadee0;
+}
+tbody tr:nth-child(even) {
+  background-color: #f5f6f8;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TP 24: DOM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <h1>Ajouter un étudiant</h1>
+      <div>
+        <div id="err-student"></div>
+
+        <form id="cours-form">
+          <p id="err-cours"></p>
+          <label for="cours-input">Ajouter un cours</label>
+          <input id="cours-input" type="text" placeholder="Ajouter un cours" />
+          <input type="submit" value="Ajouter" />
+        </form>
+
+        <form id="student-form">
+          <input id="nom" placeholder="Nom" type="text" /><br />
+          <label for="nom" class="nom"></label><br />
+
+          <input id="prenom" placeholder="Prenom" type="text" /><br />
+          <label for="prenom" class="prenom"></label><br />
+
+          <input id="age" placeholder="Age" type="number" /><br />
+          <label for="age" class="age"></label><br />
+
+          <input id="option" placeholder="option" /><br />
+          <label for="option" class="option"></label> <br />
+
+          <input id="pays" placeholder="Pays" /><br />
+          <label for="pays" class="pays"></label> <br />
+
+          <input type="radio" id="monsieur" name="civil" />
+          <label for="monsieur">Monsieur</label><br />
+          <input type="radio" id="madame" name="civil" />
+          <label for="madame">Madame</label> <br />
+          <label for="gender" class="gender"></label><br />
+
+          <!-- <label for="cours-list">Cours</label> -->
+          <ul id="cours-list"></ul>
+
+          <input type="submit" value="Envoyer" />
+        </form>
+      </div>
+
+      <h2>Listes des étudiants</h2>
+      <table class="student-table">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Age</th>
+            <th>Genre</th>
+            <th>Pays</th>
+            <th>Option</th>
+            <th>Cours</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
