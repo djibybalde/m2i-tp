@@ -11,7 +11,6 @@
 body {
   background-color: #f5f3f3;
   color: #141414;
-  /* font-weight: bold; */
   font-size: 16px;
 }
 
@@ -21,10 +20,13 @@ h2 {
   line-height: 1.2;
 }
 h1 {
-  font-size: calc(1rem + 1.5vw);
+  font-size: calc(1.5rem + 1vw);
 }
 h2 {
-  font-size: calc(0.7rem + 1.5vw);
+  font-size: calc(1.2rem + 1vw);
+}
+.page-stagiaire h1 {
+  font-size: calc(1.2rem + 1vw);
 }
 p,
 span,
@@ -33,7 +35,7 @@ input,
 select,
 table,
 button {
-  font-size: calc(0.2rem + 1.5vw);
+  font-size: calc(0.7rem + 1vw);
 }
 button {
   margin: 0;
@@ -48,7 +50,9 @@ header {
 .container-fluid {
   margin: 0.3rem !important;
 }
-
+.bold {
+  font-weight: bold;
+}
 .footer-child label {
   margin-bottom: 1rem;
 }
@@ -60,65 +64,20 @@ header {
 .table-striped tbody tr:hover {
   background-color: #d5d7da !important;
 }
-/* 
-.table-striped tbody tr:nth-child(odd) * {
-  background-color: #eee4e40d !important;
-}
 
-.table-striped tbody tr:nth-child(even) {
-  background-color: #eee4e40d !important;
-} */
-
-/* 
-th {
-  padding: 0.5rem;
-  border: 0.1rem solid slategray;
-
-  background-color: steelblue;
-  color: #f5f3f3;
-}
-td {
-  border: 0.05rem solid slategray;
-  padding: 0 0.2rem;
-}
-
-td:first-child {
-  font-weight: bold;
-  text-align: right;
-} */
-/* tr:nth-child(odd) {
-  background-color: #f5f3f3;
-} */
-/* tr:nth-child(even) {
-  background-color: #dddddd;
-} */
-/* tbody tr:hover {
-  cursor: pointer;
-  background-color: #a8a4a4;
-} */
 label span,
 .text-red {
   color: red;
 }
 
-/* ==================== NavBar ========================= */
-
 /* ===================== GRID ========================== */
-/* .container-parent {
-  margin: 0.2rem;
-  display: grid;
-  grid-auto-rows: 2rem;
-  grid-gap: 1.5rem;
-  padding: 0.3rem 0.7rem;
-  grid-template-rows: 13rem 45rem 10rem 20rem;
-} */
 .container-child {
   border: 0.12rem solid gray;
   margin: 1rem;
 }
 
-.body-banner img {
-  width: 100%;
+.carousel-item img {
+  width: 100% !important;
 }
 
 .img-logo img {
@@ -184,27 +143,9 @@ label span,
   padding: 1rem;
 }
 
-/***********/
-/* .container-child:nth-child(even) {
-  background-color: #ebbcbc;
-} */
-/***********/
-/* .container-child:nth-child(odd) {
-  background-color: #f7e2e2;
-} */
 /* ===================== RESPONSIVE ========================== */
 
 @media screen and (min-width: 768px) {
-  /*md*/
-  /* .container-parent {
-    display: grid;
-    grid-auto-rows: 2rem;
-    grid-gap: 1.5rem;
-    padding: 0.3rem 0.7rem;
-    grid-template-rows: 15rem 40rem 12rem 12rem;
-    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
-  } */
-
   /***********/
   .body-text {
     display: grid;

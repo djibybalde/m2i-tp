@@ -46,19 +46,18 @@ internForm.addEventListener("submit", function (event) {
     const lastNameError = document.querySelector(".lname");
     const emailError = document.querySelector(".email");
     const studieError = document.querySelector(".studie");
-    // const bioError = document.querySelector(".bio");
 
-    if (lastNameInput.value < 3) {
+    if (lastNameInput.value.length < 3) {
       lastNameError.innerText = "Ce champ doit contenir au mois 3 caractères";
       lastNameError.classList.add("text-red");
-    } else if (firstNameInput.value < 3) {
+    } else if (firstNameInput.value.length < 3) {
       firstNameError.innerText = "Ce champ doit contenir au mois 3 caractères";
       firstNameError.classList.add("text-red");
     } else if (
       !emailInput.value.includes("@") ||
       !emailInput.value.includes(".")
     ) {
-      emailError.innerText = "Ce champ doit contenir une addresse email";
+      emailError.innerText = "Ce-ci n'est pas une addresse email";
       emailError.classList.add("text-red");
     } else if (!studieInput.value) {
       studieError.innerText = "Ce champ doit être selectionné";
@@ -79,7 +78,8 @@ internForm.addEventListener("submit", function (event) {
         firstNameInput.value,
         lastNameInput.value,
         emailInput.value,
-        studieInput.value,
+        studieInput.innerText.split("\n")[studieInput.selectedIndex],
+        // studieInput.value,
         bioInput.value
       );
       internDatabase.push(newIntern);
@@ -94,30 +94,6 @@ internForm.addEventListener("submit", function (event) {
         storedData.push(newIntern);
         localStorage.setItem("internKey", JSON.stringify(storedData));
       }
-
-      //   console.log(localStorage);
-      //   console.log(storedData);
-      //   const tr = document.createElement("tr");
-      //   tableBody.append(tr);
-
-      //   const firstName = document.createElement("td");
-      //   firstName.innerText = firstNameInput.value;
-
-      //   const lastName = document.createElement("td");
-      //   lastName.innerText = lastNameInput.value;
-
-      //   const emailAddress = document.createElement("td");
-      //   emailAddress.innerText = emailInput.value;
-
-      //   // Ajout de l'event de suppression sur le bouton
-      //   const deleteStudentButton = document.createElement("button");
-      //   deleteStudentButton.innerText = "X";
-      //   deleteStudentButton.addEventListener("click", function () {
-      //     deleteStudentButton.parentElement.parentElement.removeChild(
-      //       deleteStudentButton.parentElement
-      //     );
-      //   });
-      //   tr.append(firstName, lastName, emailAddress, deleteStudentButton);
 
       for (queryElement of querySelectorElements) {
         queryElement.value = "";

@@ -24,9 +24,9 @@ for (let i = 0; i < storedData.length; i++) {
   showButton.classList.add(...["btn", "btn-outline-success", "btn-sm", "m-1"]);
 
   deleteButton.addEventListener("click", function () {
-    //Methode 1: getIndex ==> delete the index row ==> refresh the data ==> refresh the page
+    // Methode 1: getIndex ==> delete the index row ==> refresh the data ==> refresh the page
     const index = storedData.findIndex(function (intern) {
-      return (intern.id = storedData[i].id);
+      return intern.id === storedData[i].id;
     });
     storedData.splice(index, 1);
     localStorage.setItem("internKey", JSON.stringify(storedData));
@@ -43,20 +43,24 @@ for (let i = 0; i < storedData.length; i++) {
       showDetails.classList.add(...["container-child", "show-details", "m-3"]);
 
       const index = storedData.findIndex(function (intern) {
-        return (intern.id = storedData[i].id);
+        return intern.id === storedData[i].id;
       });
 
       const pName = document.createElement("p");
       pName.innerText = `${storedData[index].lName} ${storedData[index].fName}`;
+      pName.classList.add(...["m-3", "bold"]);
 
       const pEmail = document.createElement("p");
-      pEmail.innerHTML = `<span>Email :</span> <span>${storedData[index].email}</span>`;
+      pEmail.innerHTML = `<span class="bold">Email :</span> <span>${storedData[index].email}</span>`;
+      pEmail.classList.add("m-3");
 
       const pStudie = document.createElement("p");
-      pStudie.innerHTML = `<span>Etudes faites :</span> <span>${storedData[index].studie}</span>`;
+      pStudie.innerHTML = `<span class="bold">Etudes faites :</span> <span>${storedData[index].studie}</span>`;
+      pStudie.classList.add("m-3");
 
       const pBio = document.createElement("p");
-      pBio.innerHTML = `<span>Bio :</span> <span>${storedData[index].bio}</span>`;
+      pBio.innerHTML = `<span class="bold">Bio :</span> <span>${storedData[index].bio}</span>`;
+      pBio.classList.add("m-3");
 
       showDetails.append(pName, pEmail, pStudie, pBio);
     } else {
