@@ -26,7 +26,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <!-- CSS -->
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="/style.css" />
   </head>
 
   <body>
@@ -35,11 +35,10 @@
         <div class="container-fluid">
           <!-- Brand -->
           <div class="img-logo">
-            <a class="navbar-brand" href="../index.html">
+            <a class="navbar-brand" href="/index.html">
               <img src="/images/logo/js-logo.png" alt="m2i-logo" />
             </a>
           </div>
-
           <!-- Toggler/collapsibe Button -->
           <div>
             <button
@@ -51,20 +50,29 @@
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
-
           <!-- Navbar links -->
           <div
             class="collapse navbar-collapse justify-content-end"
             id="collapsibleNavbar"
           >
+            <h1 class="accessibility">Menu principal</h1>
+            <!--ce titre est lu que par les internautes malvoyants (accessibility)-->
             <ul class="navbar-nav">
               <li class="nav-item" eventKey="1">
-                <a class="nav-link" href="../index.html">Accueil</a>
+                <a
+                  class="nav-link"
+                  href="/index.html"
+                  title="Accéder à la page d'accueil"
+                  >Accueil</a
+                >
               </li>
-
               <li class="nav-item" eventKey="2">
-                <a class="nav-link" href="/showData/blockToDisplayData.html"
-                  >Nos stagiaires</a
+                <a
+                  class="nav-link"
+                  href="/showData/blockToDisplayData.html"
+                  title="Accéder à la liste des stagiaires"
+                >
+                  Nos stagiaires</a
                 >
               </li>
             </ul>
@@ -75,23 +83,11 @@
 
     <main class="container-parent page-stagiaire">
       <div class="container-child">
-        <h1 class="m-2 mb-3">Listes des stagiaires</h1>
-
+        <h2 class="m-2 mb-3">Listes des stagiaires</h2>
         <div class="table-responsive m-2">
-          <table
-            class="
-              table
-              table-striped
-              table-bordered
-              table-hover
-              table-sm
-              table-active
-              intern-table
-            "
-          >
+          <table class="table table-striped table-hover table-sm intern-table">
             <caption></caption>
-
-            <thead class="thead-dark text-center">
+            <thead class="thead-dark table-active text-center">
               <tr>
                 <th>NOM</th>
                 <th>PRENOM</th>
@@ -112,31 +108,40 @@
           >
         </div>
       </div>
-      <div id="show-details" class="container-child-">
-        <div class="m-3"></div>
-      </div>
+
+      <div id="show-details" class="text-justify"></div>
 
       <footer class="container-child footer">
         <div class="footer-child">
-          <h2>Notre adresse</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            nisi provident veniam sequi cupiditate eveniet corporis earum, in
-            nihil nam ducimus maiores, quos maxime facilis? Autem commodi amet
-            eligendi facere.
-          </p>
+          <h3>Notre adresse</h3>
+          <address>
+            <p>146 Rue de Picpus, 75012 Paris</p>
+            <p>Tel : 01 44 53 36 00</p>
+          </address>
         </div>
-
         <div class="footer-child">
-          <form class="col-8">
+          <div class="col-10">
             <label for="email">S'inscrire à la newsletter</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="Votre address email"
-            />
-          </form>
+            <div class="input-group">
+              <div class="">
+                <div class="input-group-text" id="btnGroupAddon">@</div>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Votre address email"
+                aria-label="Input group example"
+                aria-describedby="btnGroupAddon"
+              />
+              <a
+                type="submit"
+                class="btn btn-outline-info"
+                href="blockToDisplayData.html"
+              >
+                s'inscrire
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </main>

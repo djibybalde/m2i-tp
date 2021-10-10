@@ -15,6 +15,7 @@ for (let i = 0; i < storedData.length; i++) {
 
   const tdAction = document.createElement("td");
   tdAction.classList.add("text-center");
+
   const deleteButton = document.createElement("button");
   deleteButton.innerHTML = `<i class="fa fa-trash"></i>`;
   deleteButton.classList.add(...["btn", "btn-outline-danger", "btn-sm", "m-1"]);
@@ -38,37 +39,29 @@ for (let i = 0; i < storedData.length; i++) {
   });
 
   showButton.addEventListener("click", function () {
-    const showDetails = document.querySelector("#show-details");
-    if (!document.querySelector(".show-details")) {
-      showDetails.classList.add(...["container-child", "show-details", "m-3"]);
-
-      const index = storedData.findIndex(function (intern) {
-        return intern.id === storedData[i].id;
-      });
-
-      const pName = document.createElement("p");
-      pName.innerText = `${storedData[index].lName} ${storedData[index].fName}`;
-      pName.classList.add(...["m-3", "bold"]);
-
-      const pEmail = document.createElement("p");
-      pEmail.innerHTML = `<span class="bold">Email :</span> <span>${storedData[index].email}</span>`;
-      pEmail.classList.add("m-3");
-
-      const pStudie = document.createElement("p");
-      pStudie.innerHTML = `<span class="bold">Etudes faites :</span> <span>${storedData[index].studie}</span>`;
-      pStudie.classList.add("m-3");
-
-      const pBio = document.createElement("p");
-      pBio.innerHTML = `<span class="bold">Bio :</span> <span>${storedData[index].bio}</span>`;
-      pBio.classList.add("m-3");
-
-      showDetails.append(pName, pEmail, pStudie, pBio);
-    } else {
+    const index = storedData.findIndex(function (intern) {
+      return intern.id === storedData[i].id;
+    });
+    if (
+      document.querySelector(".show-details") &&
+      document.querySelector("p").innerText === storedData[index].id
+    ) {
       showDetails.classList.remove("show-details");
       showDetails.remove();
-      showButton.innerHTML = "";
-      showButton.innerHTML = `<i class="fa fa-eye-slash"></i>`;
       window.location = "/showData/blockToDisplayData.html";
+    } else {
+      if (document.querySelector("p").innerText !== storedData[index].id) {
+        showButton.innerHTML = `<i class="fa fa-eye"></i>`;
+      } else {
+        showButton.innerHTML = `<i class="fa fa-eye-slash"></i>`;
+      }
+      showDetails.classList.add(...["container-child", "show-details"]);
+
+      pId.innerHTML = `<span class="hidden-id">${storedData[index].id}</span>`;
+      pName.innerText = `${storedData[index].lName}, ${storedData[index].fName}`;
+      pEmail.innerHTML = `<span class="bold">Email :</span> <span>${storedData[index].email}</span>`;
+      pStudie.innerHTML = `<span class="bold">Etudes faites :</span> <span>${storedData[index].studie}</span>`;
+      pBio.innerHTML = `<span class="bold">Bio :</span> <span>${storedData[index].bio}</span>`;
     }
   });
 
@@ -76,3 +69,13 @@ for (let i = 0; i < storedData.length; i++) {
   tr.append(lastName, firstName, emailAddress, tdAction);
   tableBody.append(tr);
 }
+
+const showDetails = document.querySelector("#show-details");
+const pId = document.createElement("p");
+const pName = document.createElement("p");
+const pEmail = document.createElement("p");
+const pStudie = document.createElement("p");
+const pBio = document.createElement("p");
+
+pName.classList.add("bold");
+showDetails.append(pId, pName, pEmail, pStudie, pBio);
