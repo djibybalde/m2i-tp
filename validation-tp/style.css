@@ -120,6 +120,15 @@ label span,
   font-weight: bold;
 }
 
+.btn-outline-info {
+  color: #007daf !important;
+  border-color: #007daf !important;
+}
+.btn-outline-info:hover {
+  background-color: #007daf !important;
+  border-color: #007daf !important;
+  color: #f7f7f7 !important;
+}
 /* ==================================================== */
 /* ====================== GRID ======================== */
 /* ==================================================== */
