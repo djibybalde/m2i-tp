@@ -61,7 +61,9 @@ for (let i = 0; i < storedData.length; i++) {
       pName.innerText = `${storedData[index].lName}, ${storedData[index].fName}`;
       pEmail.innerHTML = `<span class="bold">Email :</span> <span>${storedData[index].email}</span>`;
       pStudie.innerHTML = `<span class="bold">Etudes faites :</span> <span>${storedData[index].studie}</span>`;
-      pBio.innerHTML = `<span class="bold">Bio :</span> <span>${storedData[index].bio}</span>`;
+      pBio.innerHTML = storedData[index].bio
+        ? `<span class="bold">Bio :</span> <span>${storedData[index].bio}</span>`
+        : "";
     }
   });
 
