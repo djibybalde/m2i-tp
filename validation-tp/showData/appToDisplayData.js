@@ -22,7 +22,7 @@ for (let i = 0; i < storedData.length; i++) {
 
   const showButton = document.createElement("button");
   showButton.innerHTML = `<i class="fa fa-eye"></i>`;
-  showButton.classList.add(...["btn", "btn-outline-success", "btn-sm", "m-1"]);
+  showButton.classList.add(...["btn", "btn-outline-info", "btn-sm", "m-1"]);
 
   deleteButton.addEventListener("click", function () {
     // Methode 1: getIndex ==> delete the index row ==> refresh the data ==> refresh the page
