@@ -53,10 +53,32 @@ CREATE TABLE IF NOT EXISTS vols (
 
 -- ----------------- TP 2: SQL ------------------
 -- ----------------------------------------------
-
--- 1. INSERTION DE DONNEES DANS LA TABLE AVIONS 
+-- 1. INSERTION DE DONNEES 
+-- INSERTION DE DONNEES DANS LA TABLE AVIONS 
 INSERT INTO avions (id_avion, fabricant, modele, capacite, localite) 
-VALUES (111, "BOEING", 787, 300, "NAIROBI"), (112, "BOEING", 737, 250, "SIDNEY"), (113, "AIRBUS", 320, 220, "MILAN"), (114, "AVIC", 250, 150, "PEKIN")
+VALUES (111, "BOEING", 787, 300, "NAIROBI"), (112, "BOEING", 737, 250, "SIDNEY"), (113, "AIRBUS", 320, 220, "MILAN"), (114, "AVIC", 250, 150, "PEKIN");
+
+-- INSERTION DE DONNEES DANS LA TABLE PILOTES 
+INSERT INTO pilotes(
+    lname, fname, address
+) VALUES 
+    ("Baldé", "Djiby", "147 Val-d'Oise, 75000 PARIS"),
+    ("Fontaine", "Elodie", "7 Bouguenais, 44000 NANTES"),
+    ("Noubissi", "Wilfried", "202 SIDNEY, XXXXX SIDNEY"),
+    ("Diamanka", "Yacine", "170 MONTREAL, XXXXX MONTREAL"),
+    ("Kandé", "Ousmane", "230 MILAN, XXXXX MILAN");
+
+-- INSERTION DE DONNEES DANS LA TABLE VOLS 
+INSERT INTO vols(
+    id_pilote, id_avion, numero_vol, 
+    ville_depart, ville_arrivee, 
+    heure_depart, heure_arrivee
+) VALUES 
+    (3, 111, "IT100", "SIDNEY", "LONDRE", "09:57:26", NULL),
+    (5, 112, "IT101", "MILAN", "BERLIN", "02:30:19", NULL),
+    (4, 113, "IT102", "MONTREAL", "TORONTO", "17:20:00", "19:00:00"),
+    (1, 114, "IT104", "PARIS", "TORONTO", NULL, NULL);
+
 
 -- 2. Afficher tous les avions
 SELECT * FROM avions;
@@ -88,10 +110,28 @@ SELECT * FROM avions WHERE capacite = (SELECT MIN(capacite) FROM avions);
 -- 11. Afficher les données des avions dont la capacité et supérieure à la capacité moyenne
 SELECT * FROM avions WHERE capacite > (SELECT avg(capacite) FROM avions);
 
--- 12. Afficher le nom et l’adresse des pilotes assurant les vols IT100 et IT104
 
--- 13. Afficher les numéros des pilotes qui sont en service
+-- 12. Afficher les noms et adresses des pilotes assurant les vols IT100 et IT104
+SELECT pilotes.lname, pilotes.fname, pilotes.adresse
+    FROM pilotes INNER JOIN vols ON pilotes.id_pilote = vols.id_pilote 
+    WHERE vols.numero_vol = "IT100" OR vols.numero_vol = "IT104";
 
--- 14. Afficher les numéros des pilotes qui ne sont pas en service
+-- 13. Afficher les noms et adresses des pilotes qui sont en service
+SELECT pilotes.lname, pilotes.fname, pilotes.adresse
+    FROM pilotes 
+        INNER JOIN vols ON pilotes.id_pilote = vols.id_pilote 
+        WHERE ISNULL(vols.heure_arrivee) AND NOT ISNULL(vols.heure_depart);
+
+-- 14. Afficher les noms et adresses des pilotes qui ne sont pas en service
+SELECT pilotes.lname, pilotes.fname, pilotes.adresse
+    FROM pilotes 
+        INNER JOIN vols ON pilotes.id_pilote = vols.id_pilote 
+        WHERE (NOT ISNULL(vols.heure_arrivee) AND NOT ISNULL(vols.heure_depart)) 
+        OR (ISNULL(vols.heure_arrivee) AND ISNULL(vols.heure_depart));
 
 -- 15. Afficher les noms des pilotes qui conduisent un AIRBUS
+SELECT pilotes.lname, pilotes.fname 
+    FROM vols 
+        INNER JOIN avions ON vols.id_avion = avions.id_avion 
+        INNER JOIN pilotes ON vols.id_pilote = pilotes.id_pilote 
+        WHERE fabricant = 'AIRBUS';
