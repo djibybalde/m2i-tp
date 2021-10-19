@@ -8,4 +8,4 @@ Note that in the script, in order to facilitate the notation of the variables we
 - lname = nom
 - fname = prenom
 
-![result](model.drawio.png))
+![result](model.drawio.png)
