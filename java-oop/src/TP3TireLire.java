@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
+// TP3 - Tirelire : https://bit.ly/3wm7D8V
 public class TP3 {
-    // TP3 - tiretire : https://bit.ly/3wm7D8V
+
     private double amount;
 
     public void setAmount(double amount) {
@@ -13,7 +14,7 @@ public class TP3 {
     }
 
     @Override
-    public String toString() { // afficher()
+    public String toString() { // afficher() method
         return amount > 0 ? "Vous avez " + amount + " € dans votre tirelire." : "Vous êtes sans le sou.";
     }
 
@@ -48,6 +49,7 @@ public class TP3 {
 
 class TP3Main {
     public static void main(String[] args) {
+
         TP3 tireTire = new TP3();
 
         tireTire.setAmount(0.0);
