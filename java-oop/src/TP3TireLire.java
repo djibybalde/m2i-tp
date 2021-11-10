@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 // TP3 - Tirelire : https://bit.ly/3wm7D8V
-public class TP3 {
+public class TP3TireLire {
 
     private double amount;
 
@@ -50,7 +50,7 @@ public class TP3 {
 class TP3Main {
     public static void main(String[] args) {
 
-        TP3 tireTire = new TP3();
+        TP3TireLire tireTire = new TP3TireLire();
 
         tireTire.setAmount(0.0);
         System.out.println(tireTire);
