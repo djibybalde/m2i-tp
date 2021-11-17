@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Main {
+
+    // script to test the code
     public static void main(String[] args) {
 
         LocalDateTime now = LocalDateTime.now();
