@@ -1,12 +1,15 @@
 package TP4;
 
 class Souris {
+
+    // attributes
     private final int POIDS;
     private String couleur;
     private int age;
     private final int ESPERANCE_VIE;
     private boolean clonee;
 
+    // constructor
     public Souris(int poids, String couleur) {
         this.POIDS = poids;
         this.couleur = couleur;
@@ -16,6 +19,7 @@ class Souris {
         System.out.println("Une nouvelle souris !");
     }
 
+    // copy constructor
     public Souris(Souris Souris) {
         System.out.println("Clonage d’une souris ! ");
         this.POIDS = Souris.POIDS;

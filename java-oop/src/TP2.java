@@ -1,8 +1,10 @@
+// Le but de cet exercice est de créer des « patients » qui ont un poids et une taille,
+// et de calculer leur « Indice de Masse Corporelle» (IMC).
+
 import java.util.Scanner;
 
 public class TP2 {
-    // Le but de cet exercice est de créer des « patients » qui ont un poids et une taille,
-    // et de calculer leur « Indice de Masse Corporelle» (IMC).
+
     private double weight;
     private double height;
 
@@ -27,7 +29,7 @@ public class TP2 {
     }
 }
 
-class TP12ain {
+class TP2Main {
     public static void main(String[] args) {
 
         Scanner keyboard = new Scanner(System.in);

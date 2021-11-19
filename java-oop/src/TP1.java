@@ -1,7 +1,9 @@
+// Ecrire un programme Java qui permet de calculer les dimensions d’un Rectangle.
+
 import java.util.Scanner;
 
 public class TP1 {
-    // Ecrire un programme Java qui permet de calculer les dimensions d’un Rectangle.
+
     private double length;
     private double width;
 

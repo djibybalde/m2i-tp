@@ -1,0 +1,33 @@
+- a (Person) class can be considered as a type like String
+- isMarie is an attribute of the Person class
+- getName is a method of the Person class
+- mySelf.isMarie = false; is an instance of the Person class
+- if we add private next to String firstName from the Person class,
+    this attribute (firstName) can be only accessible from the same class (cours.Person above),
+    so we cannot use this attribute in this cours.Main class for example.
+
+
+- In OOP all attribute must be private, so we have to use the getters to read and setters to write the attribute(s).
+    - GETTER: used to read and access the attribute(s)
+    - SETTER : used to write, so to modify the attribute(s)
+
+- A constructor is a method that take the same name with the class. The goal of a constructor is to initialize the attributes.
+- Puisque une classe ne peut pas être invoquée sans constructor, meme si on ne le defini pas explicitement,
+- il y'a un constructeur qui est invoqué par default (jamais un object est créé dans une class sans qu'il ait l'appel d'un constructor
+- constrictor par default par default : use the parameters of the class (can be automatically generated)
+- constrictor par default doesn't use any parameters of the class
+- constrictor de copie: copie les valeurs du premier constrictor sans forcement que les deux constrictor pointe vers la meme reference
+
+
+- le niveau de visibilité d'un attribute private se limite à la class où cet attribute est define
+    - Dans ce cas où on a besoin d'acceder ces attributes/methodes definient
+    - avec private dans une autre class extends, on utilise protected
+
+    - protected permet la vissibilité dans les class de même files (pas visible dans d'autres packages)
+
+    - Si une class n'est pas public (si on met rien par exemple), elle n'est accessible qu'à l'interieur du package :
+    - les class/file(s) du même package peuvent l'utiliser mais pas les autres.
+
+    - private: accessible uniquement à l'interieur de la class
+    - protected: accessible au sein du même package (toutes les class du même package)
+    - public: dans tout les packages de même niveau ou dans les children (pas en dehord du dossier src)
