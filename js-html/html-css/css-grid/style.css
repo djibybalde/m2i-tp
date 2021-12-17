@@ -1,0 +1,124 @@
+.parent {
+  background-color: indigo;
+  display: grid;
+  grid-gap: 5px;
+}
+
+.child {
+  font-size: 30px;
+  font-weight: bold;
+  background-color: orangered;
+}
+
+@media screen and (min-width: 480px) {
+  .parent {
+    grid-auto-rows: 300px;
+  }
+  .child {
+    background-color: yellow;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .child {
+    background-color: green;
+  }
+}
+@media screen and (min-width: 992px) {
+  .parent {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "premier premier premier"
+      "deuxieme deuxieme troisieme"
+      "quatrieme quatrieme quatrieme"
+      "cinquieme cinquieme sixieme"
+      "septieme septieme septieme"
+      "huitieme huitieme huitieme";
+  }
+
+  .child:nth-child(1) {
+    grid-area: premier;
+  }
+
+  .child:nth-child(2) {
+    grid-area: deuxieme;
+  }
+
+  .child:nth-child(3) {
+    grid-area: troisieme;
+  }
+
+  .child:nth-child(4) {
+    grid-area: quatrieme;
+  }
+
+  .child:nth-child(5) {
+    grid-area: cinquieme;
+  }
+
+  .child:nth-child(6) {
+    grid-area: sixieme;
+  }
+
+  .child:nth-child(7) {
+    grid-area: septieme;
+  }
+
+  .child:nth-child(8) {
+    grid-area: huitieme;
+  }
+
+  .child {
+    background-color: blue;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .parent {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "premier premier premier premier"
+      "deuxieme deuxieme troisieme troisieme"
+      "quatrieme quatrieme cinquieme cinquieme"
+      "quatrieme quatrieme sixieme sixieme"
+      "septieme septieme septieme septieme"
+      "huitieme huitieme huitieme huitieme";
+  }
+
+  .child:nth-child(1) {
+    grid-area: premier;
+  }
+
+  .child:nth-child(2) {
+    grid-area: deuxieme;
+  }
+
+  .child:nth-child(3) {
+    grid-area: troisieme;
+  }
+
+  .child:nth-child(4) {
+    grid-area: quatrieme;
+  }
+
+  .child:nth-child(5) {
+    grid-area: cinquieme;
+  }
+
+  .child:nth-child(6) {
+    grid-area: sixieme;
+  }
+
+  .child:nth-child(7) {
+    grid-area: septieme;
+  }
+
+  .child:nth-child(8) {
+    grid-area: huitieme;
+  }
+  .child {
+    background-color: orangered;
+  }
+}

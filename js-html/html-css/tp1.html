@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
     <title>CRM</title>
+    <!-- Remplacer le url par un title -->
+    <meta charset="UTF-8" />
+    <!-- balise orpholine, à la différence des balise paires, `meta` n'est pas d'un élément pour la ferméture -->
+    <!-- charset="utf-8" tient en compte les caracters spécifiques comme les accents -->
+
     <link rel="CRM icon" href="/images/crm-image0.png" type="image/x-icon" />
   </head>
-
+  <!-- Tous ce qui sera dans le head ne sera pas visible dans la page html. -->
+  <!-- Balises paires: ce sont des ouvroutes et fermantes. -->
+  <!-- Pour ouvrir la page avec live server: click droit >> open with live server -->
   <body>
+    <!--
+        balise de type block: occupe toute la largeur disponible du parent. p (permet aussi de revenir directement à la ligne), h1, ...
+        balise de type inline: n'occupe pas toute la largeur disponible du parent: ex: label, input, span
+    -->
     <h1>MyCRM</h1>
     <h2>Description</h2>
     <p>
@@ -14,5 +24,10 @@
       <strong>commande</strong> et de <strong><u>client</u></strong
       >.
     </p>
+
+    <!-- La balise <script> doit se retrouver en dernier position (juste avant la
+      fermetur de body) pour avoir un meilleur rendu. Pour des raisons de google
+      analityque, on peut le mettre dans la partie head pour enregiste les 1er
+      pas de l'utilisateur dès sa 1er connexion.-->
   </body>
 </html>
